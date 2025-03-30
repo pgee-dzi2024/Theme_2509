@@ -28,7 +28,8 @@
       </div><!-- End Section Title -->
 
       <div class="container">
-        <form>
+        <form method="post" action="{% url 'submit_poll' %}">
+          {% csrf_token %}
           {% for question in poll.question_set.all %}
           <div class="row justify-content-center" style="margin-bottom: 50px;">
             <div class="col-lg-8 mb-10" data-aos="fade-up" data-aos-delay="100">
@@ -40,7 +41,7 @@
                     <div class="col-lg-10">
                         {% for option in question.options.all %}
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="gridRadios"
+                            <input class="form-check-input" type="radio"  name="question_{{ question.id }}"
                                 id="gridRadios{{option.id}}" value="option1" checked>
                             <label class="form-check-label" for="gridRadios{{option.id}}">
                                 {{ option.text }}
@@ -55,7 +56,7 @@
                     <div class="col-lg-10">
                         {% for option in question.options.all %}
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck{{option.id}}">
+                            <input class="form-check-input" type="checkbox" id="gridCheck{{option.id}}" name="question_{{ question.id }}">
                             <label class="form-check-label" for="gridCheck{{option.id}}">
                                 {{ option.text }}
                             </label>

@@ -21,7 +21,7 @@ def poll(request, poll_id):
 
 
 
-
+"""
 def submit_poll(request):
     if request.method == "POST":
         # Събиране на отговорите
@@ -48,3 +48,4 @@ def submit_poll(request):
         return JsonResponse({"success": True, "message": "Вашите отговори бяха записани успешно."})
 
     return JsonResponse({"success": False, "message": "Невалидна заявка (не е POST)."})
+    """

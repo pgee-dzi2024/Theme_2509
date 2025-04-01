@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block main_section %}
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+            <h1>Welcome to <span>BizLand</span></h1>
+            <p>We are a team of talented designers making websites with Bootstrap</p>
+            <div class="d-flex">
+              <a href="#polls" class="btn-get-started">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- Pricing Section -->
+    <section id="polls" class="pricing section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Анкети</h2>
+        <p><span>Check our</span> <span class="description-title">Pricing</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        {% for poll in polls %}
+        <div class="row justify-content-center" style="margin-bottom: 50px;">
+          <div class="col-lg-8 mb-10" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-item featured">
+              <h3>{{ poll.theme }}</h3>
+              <p>{{ poll.description }}</p>
+              <div class="btn-wrap">
+                <a href="{% url 'poll' poll.id %}" class="btn-buy">Виж повече ... </a>
+              </div>
+            </div>
+          </div>
+        </div><!-- End Pricing Item -->
+        {% endfor %}
+
+      </div>
+
+    </section><!-- /Pricing Section -->
+
+  </main>
+{% endblock %}

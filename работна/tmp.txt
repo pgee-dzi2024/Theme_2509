@@ -1,0 +1,158 @@
+Ти си ученичка от 12  клас специялност"Приложно програмиране". Пишеш дипломен проект по задание от прикачения файл.Направи ми план на дипломния проект и пазбивка по брои за всяка точка според изискванията на заданието.
+
+
+
+
+
+
+Структура на Дипломния Проект
+Титулна страница (1 страница)
+
+Наименование на училището
+Тема на дипломния проект
+Имена на ученика
+Име и фамилия на ръководителя
+Съдържание (1 страница)
+
+Увод (Въведение) (2 страници)
+
+Описание на целите и задачите на проекта.
+Значимост на избраната тема.
+Основна част (20 страници)
+
+4.1. Концепция на работа с бази данни в Django (4 страници)
+Въведение в основите на базите данни
+Основни компоненти: модели, връзки, заявки
+4.2. Реализация на обектно-релационни модели (4 страници)
+Как Django управлява ORM
+Примери за релации между модели (едно-към-едно, едно-към-много, много-към-много)
+4.3. Видове полета и заявките в Django (5 страници)
+Основни типове данни и как се използват
+Как се извършват заявки и манипулации на данни
+4.4. Описание на съществуващите решения и литература (4 страници)
+Анализ на текущите приложения и методологии
+Цитиране на източници
+4.5. Избор на технологии и алгоритми (3 страници)
+Обоснованост на избора на Django
+Алтернативи и защо не са избрани
+Заключение (2 страници)
+
+Обобщение на постигнатите резултати
+Препоръки за развитие на проекта
+Приложения (непо-малко от 2 страници)
+
+Документация на софтуера
+Код и примери, които не са включени в основната част
+///////////////////////
+
+from django.db import models
+
+class Survey(models.Model):
+    question = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+class Answer(models.Model):
+    survey = models.ForeignKey(Survey, on_delete=models.CASCADE)
+    answer_text = models.CharField(max_length=255)
+
+    ////////////
+
+
+    python manage.py makemigrations
+python manage.py migrate
+
+//////////
+
+surveys = Survey.objects.all()
+/////
+
+
+new_answer = Answer(survey=existing_survey, answer_text='My answer')
+new_answer.save()
+
+///////////
+
+
+from django.db import models
+
+class Question(models.Model):
+    question_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+
+class Choice(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField(default=0)
+
+    //////////////////
+
+    class Student(models.Model):
+    name = models.CharField(max_length=100)
+    courses = models.ManyToManyField('Course')
+
+class Course(models.Model):
+    title = models.CharField(max_length=100)
+
+    ////////
+
+    python manage.py makemigrations
+python manage.py migrate
+
+////////////
+
+q = Question(question_text="What's new?", pub_date=timezone.now())
+q.save()
+
+//////////////
+
+all_questions = Question.objects.all()
+specific_question = Question.objects.get(id=1)
+
+////////////////////////
+
+q.question_text = "What's up?"
+q.save()
+
+///////////////////////////////////
+
+name = models.CharField(max_length=100)
+
+/////////////////////////
+
+description = models.TextField()
+
+//////////////////////////
+
+
+age = models.IntegerField()
+
+/////////////////////////////////
+
+
+price = models.FloatField()
+
+///////////////////
+
+is_active = models.BooleanField(default=True)
+
+//////////
+
+birth_date = models.DateField()
+event_date = models.DateTimeField()
+
+/////////////////////
+
+email = models.EmailField()
+
+///////////////
+
+document = models.FileField(upload_to='documents/')
+
+////////////////////////
+
+image = models.ImageField(upload_to='images/')
+
+///////////////////////
+
+website = models.URLField()
+

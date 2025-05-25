@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Време на генериране: 30 март 2025 в 18:52
+-- Време на генериране: 25 май 2025 в 23:31
 -- Версия на сървъра: 10.4.32-MariaDB
 -- Версия на PHP: 8.2.12
 
@@ -126,7 +126,7 @@ CREATE TABLE `auth_user` (
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
 (1, 'pbkdf2_sha256$600000$XXKY1Bu3h6Mwq3LVsUWwtb$OYrwVxLXB42DkWBmKoNpVVFev/XOTWpi+7TGQwj2L/U=', '2025-02-11 07:37:48.636089', 1, 'admin', '', '', '', 1, 1, '2025-02-11 07:36:48.903948'),
 (2, 'pbkdf2_sha256$600000$rkr9W5gpsW4hpS5gbi2epE$siI3qVlM2YoSQ0uT8Eih2+jO+GKPpoNnz5dQAW/+wcc=', NULL, 0, 'user', '', '', '', 0, 1, '2025-02-11 07:39:56.833265'),
-(3, 'pbkdf2_sha256$600000$puDguLtOrrJtOH6T2fFHXt$UA5vUOvzthF4NhkRVUj0T3E50Pv/+/3fjcg/YUcaFUQ=', '2025-03-30 11:36:17.033898', 1, 'dzi_25', '', '', '', 1, 1, '2025-03-30 11:36:01.833141');
+(3, 'pbkdf2_sha256$600000$puDguLtOrrJtOH6T2fFHXt$UA5vUOvzthF4NhkRVUj0T3E50Pv/+/3fjcg/YUcaFUQ=', '2025-04-16 09:31:46.095541', 1, 'dzi_25', '', '', '', 1, 1, '2025-03-30 11:36:01.833141');
 
 -- --------------------------------------------------------
 
@@ -197,7 +197,8 @@ INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`,
 (21, '2025-03-30 13:19:03.066975', '12', '#12: отговор 1  ***', 1, '[{\"added\": {}}]', 7, 3),
 (22, '2025-03-30 13:19:07.759024', '13', '#13: отговор 1  ***', 1, '[{\"added\": {}}]', 7, 3),
 (23, '2025-03-30 13:19:23.866328', '14', '#14: отговор 3  ***', 1, '[{\"added\": {}}]', 7, 3),
-(24, '2025-03-30 13:19:39.689699', '13', '#13: отговор 2  ***', 2, '[{\"changed\": {\"fields\": [\"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]', 7, 3);
+(24, '2025-03-30 13:19:39.689699', '13', '#13: отговор 2  ***', 2, '[{\"changed\": {\"fields\": [\"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]', 7, 3),
+(25, '2025-04-16 09:32:20.160536', '2', 'Анкета 2', 2, '[{\"changed\": {\"fields\": [\"\\u041a\\u0430\\u0440\\u0442\\u0438\\u043d\\u043a\\u0430\"]}}]', 8, 3);
 
 -- --------------------------------------------------------
 
@@ -282,6 +283,7 @@ CREATE TABLE `django_session` (
 --
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
+('7r6j2ea4q2pfsy5a6b5h21e9lbxxqf7g', '.eJxVjDsOwjAQBe_iGlkbx19Kes5grXcdHEC2FCcV4u4QKQW0b2beS0Tc1hK3npc4sziLUZx-t4T0yHUHfMd6a5JaXZc5yV2RB-3y2jg_L4f7d1Cwl28djMkBNIyGKSlktFZPw2TZAjGNqAjA6QF8coadAcgUFHhm8B7IGfH-ANrZN2E:1u4z7S:90zazVChrlEMBHHMethe5nvl9MMITOV2KT8Vr2ZZtNA', '2025-04-30 09:31:46.100530'),
 ('foo1yzv74z2hqknn5j2ki0587jo5sy86', '.eJxVjDsOwjAQBe_iGlkbx19Kes5grXcdHEC2FCcV4u4QKQW0b2beS0Tc1hK3npc4sziLUZx-t4T0yHUHfMd6a5JaXZc5yV2RB-3y2jg_L4f7d1Cwl28djMkBNIyGKSlktFZPw2TZAjGNqAjA6QF8coadAcgUFHhm8B7IGfH-ANrZN2E:1tyqxd:_Ju7yunzr0ZF4o_FySYLW6VozGrKKZMuopNP9dIimcY', '2025-04-13 11:36:17.039931'),
 ('g23zndpzlw7tuu85mf4n2y52k7d4wc4h', '.eJxVjMsOwiAQRf-FtSE8ChSX7vsNZJgZpWogKe3K-O_apAvd3nPOfYkE21rS1nlJM4mz0OL0u2XAB9cd0B3qrUlsdV3mLHdFHrTLqRE_L4f7d1Cgl2-N4JljZHQDIgGRGgMFEzMiBLA6X60dnXFMMXjIqID9AMrFbLTSoMT7AyI5ON4:1thkq4:Gjhnd4pGniTFEMRItMh_tGAm6axAt-I8i04PVoZvKIY', '2025-02-25 07:37:48.640152');
 
@@ -339,7 +341,7 @@ CREATE TABLE `main_poll` (
 
 INSERT INTO `main_poll` (`id`, `theme`, `description`, `picture`, `active`) VALUES
 (1, 'Анкета 1', 'това е примерно описание на анкета №1', 'poll_pics/services.jpg', 1),
-(2, 'Анкета 2', 'това е примерно описание на анкета №2', 'poll_pics/hero-bg.jpg', 1);
+(2, 'Анкета 2', 'това е примерно описание на анкета №2', 'poll_pics/testimonials-bg_nGEtLv2.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -537,7 +539,7 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT for table `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `django_content_type`
